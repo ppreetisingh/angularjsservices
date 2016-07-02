@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Services-2</title>
+	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		var mod=angular.module("app",[]);
+		mod.controller("control",function($scope,PI,calcArea){
+				$scope.number=0;
+    	        $scope.circle = function() 
+    	        {
+               		$scope.result = calcArea.circle($scope.number);
+            	}
+		});
+		mod.constant("PI","3.14");
+		mod.factory('Maths', function() {
+            var factory = {};
+            factory.product = function(v1, v2) {
+               return v1 * v2;
+            }
+            return factory;
+         });
+		mod.service('calcArea', function(Maths,PI){
+            this.circle = function(a) {
+               return ( Maths.product(PI,( Maths.product(a,a) )) );
+            }
+         });
+	</script>
+</head>
+<body ng-app="app" ng-controller="control">
+<div class="container">
+          <h2>AngularJS Sample Application</h2>
+         <p>Enter a number: <input type = "number" ng-model = "number" /></p>
+         <button ng-click = "circle()"> Area of circle </button>
+         <p>Result: {{result}}</p>
+      </div>
+</body>
+</html>
