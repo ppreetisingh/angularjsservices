@@ -16,27 +16,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		var mod=angular.module("MyApp",[]);
-		mod.controller("control",function($scope,$http){
-			$http.get('color.json').success(function(data){
-				$scope.color=data;
+		mod.controller("mtctrl",function($scope,$http){
+			$http.get('employee.json').success(function(data){
+				$scope.employee=data;
 			});
 		});
 	</script>
 </head>
-<body ng-app="MyApp" ng-controller="control">
+<body ng-app="MyApp" ng-controller="myctrl">
 	<div class="container">
 		<h1>Fetching Json from HTTP</h1>
 		<table class="table table-striped table-bordered">
 	      <thead>
 	      <tr class="success">
-			    <th>Color Name</th>
-	        	<th>Hexadecimal Value</th>
+			    <th>firstName</th>
+	        	<th>lastName</th>
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <tr ng-repeat="color in color">
-	        <td>{{color.colorName}}</td>
-			<td>{{color.hexValue}}</td>
+	      <tr ng-repeat="employee in employee">
+	        <td>{{employee.firstName}}</td>
+			<td>{{employee.lastName}}</td>
 	      </tr>
 	      </tbody>
     </table>
