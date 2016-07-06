@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Services 1</title>
+	<title>Services-1</title>
 	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
 	<script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -16,21 +16,21 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		var mod=angular.module("MyApp",[]);
-		mod.controller("mtctrl",function($scope,$http){
+		mod.controller("myctrl",function($scope,$http){
 			$http.get('employee.json').success(function(data){
-				$scope.employee=data;
+				$scope.=data;
 			});
 		});
 	</script>
 </head>
 <body ng-app="MyApp" ng-controller="myctrl">
 	<div class="container">
-		<h1>Loading Json from HTTP</h1>
+		<h1>Laoding Json from HTTP</h1>
 		<table class="table table-striped table-bordered">
 	      <thead>
 	      <tr class="success">
-			    <th>firstName</th>
-	        	<th>lastName</th>
+			    <th>First Name</th>
+	        	<th>Last Name</th>
 	      </tr>
 	      </thead>
 	      <tbody>
