@@ -18,7 +18,7 @@
 		var mod=angular.module("MyApp",[]);
 		mod.controller("myctrl",function($scope,$http){
 			$http.get('employee.json').success(function(data){
-				$scope.=data;
+				$scope.employee=data;
 			});
 		});
 	</script>
